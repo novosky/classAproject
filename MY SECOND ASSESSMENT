@@ -1,0 +1,490 @@
+MY SECOND ASSESSMENT – MOBILE APP DEVELOPMENT CLASS A - SEAT NO. 16 (0076)
+• Define 10 if statements and 5 conditional expressions using the when keyword.
+Answer:
+i.  fun main() {
+    var n = 34
+    if(n % 2 == 0) {
+        println("$n is even")
+    }}
+ii.    fun main() {
+    var a = 32.5
+    var b = 55.6
+
+    if(a > b) {
+        println("max($a, $b) = $a")
+    } else {
+        println("max($a, $b) = $b")
+    }}
+
+iii.   fun main() {
+    var a = 32
+    var b = 55
+
+    var max = if(a > b) a else b
+    println("max($a, $b) = $max")}
+
+iv.    fun main() {
+    var age = 17
+    if(age < 12) {
+        println("Child")
+    } else if (age in 12..17) {
+        println("Teen")
+    } else if (age in 18..21) {
+        println("Young Adult")
+    } else if (age in 22..30) {
+        println("Adult")
+    } else if (age in 30..50) {
+        println("Middle Aged")
+    } else {
+        println("Old")}
+    v. fun main() {
+        var a = 32
+        var b = 55
+
+        var max = if(a > b) {
+            println("$a is greater than $b")
+            a
+        } else {
+            println("$a is less than or equal to $b")
+            b
+        }
+        println("max($a, $b) = $max")
+    }
+
+    vi.    fun main() {
+        val num = 5 // num = 10
+
+        // If Condition Statement
+        if (num == 5) {
+            // If Block
+            println("Condition of $num equal to 5 is : True ")
+        } else {
+            // Else Block
+            println("Condition of $num equal to 5 is : False ")
+        	}
+    	}
+
+    vii.   fun main() {
+        var isLightbulbOn = true
+
+        val reaction =
+            if (isLightbulbOn) {
+                isLightbulbOn = false
+                "I just turned the light off."
+            } else {
+                isLightbulbOn = true
+                "I just turned the light on."
+            }}
+    viii.  fun main() {
+        val pricePerBook =
+            if (quantity == 1)
+                19.99
+            else if (quantity == 2)
+                18.99
+            else if (quantity == 3)
+                16.99
+            else if (quantity == 4)
+                16.99
+            else
+                14.99
+   	 }
+
+    ix.    fun main() {
+        val reaction =
+            if (isLightbulbOn)
+                "It's bright"
+            else
+                "I can't see"
+   	 }
+
+i.	
+
+
+When Expression
+Answer:
+
+1.  fun main() {
+    var dayOfWeek = 4
+    when(dayOfWeek) {
+        1 -> println("Monday")
+        2 -> println("Tuesday")
+        3 -> println("Wednesday")
+        4 -> println("Thursday")
+        5 -> println("Friday")
+        6 -> println("Saturday")
+        7 -> println("Sunday")
+        else -> println("Invalid Day")
+    	}}
+
+2. fun main() {
+    val quantity = 3
+
+    val pricePerBook = when {
+        quantity == 1 -> 19.99
+        quantity == 2 -> 18.99
+        quantity == 3 -> 16.99
+        quantity == 4 -> 16.99
+        else          -> 14.99
+   	 }}
+
+3. fun main() {
+    val isLightbulbOn = true
+
+    val reaction = when (isLightbulbOn) {
+        true  -> "It's bright"
+        false -> "I can't see"
+    	}}
+
+4. fun main() {
+    var number = 20
+    when {
+        number < 0 -> println("$number is less than zero")
+        number % 2 == 0 -> println("$number is even")
+        number > 100 -> println("$number is greater than 100")
+        else -> println("None of the above")
+    	}}
+
+5. fun main() {
+    val temperature = 48
+
+    val reaction = when {
+        temperature > 55 -> "It's too hot!"
+        temperature < 40 -> "It's too cold!"
+        else             -> "It's just right!"
+    	}}
+• Define a loop which will print out 1 - 100. 
+Answer:
+
+fun main() {
+    var num1 = 0
+    for (num1 in 1..100) {
+        println(" Value : $num1")
+    }
+}
+
+Also define a loop which will print out 1 - 10 to the console without
+printing out the numbers 4 and 5.
+Answer:
+
+fun main() {
+    val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    numbers.forEach {
+        if (it == 4) return@forEach
+        if (it == 5) return@forEach
+        println(it)
+    }
+}
+
+• Using a loop and the modulus operator, write a program
+which will print out only the even numbers between 10 and
+20 and the odd numbers between 20 and 30: NB: Use
+only one loop
+Answer:
+
+fun main() {
+    for (i in 20..30){
+
+        if(i%2!=0){
+            println("odd number "+i);
+        }
+        }
+    for (i in 10..20)
+
+        if(i%2==0){
+            println("even number "+i);
+    }
+}
+
+
+
+
+• Define 5 Classes; let each class definition contain at least
+5 instance variables; let each class contain at least 1
+constructor.
+			
+• Assign values to the instance variables in these classes
+and then print out the values in the main function by
+accessing the values. NB: Use getters and setters.
+Answer:
+1.	class Car {
+    var type : String = ""
+    var model : Int = 0
+    var price : Double = 0.0
+    var milesDrive: Int = 0
+    var owner : String = ""
+
+    constructor(type: String, model: Int, price: Double, milesDrive: Int, owner: String) {
+        this.type = type
+        this.model = model
+        this.price = price
+        this.milesDrive = milesDrive
+        this.owner = owner
+    }
+
+    fun getCarType(): String {
+        return this.type
+    }
+
+    fun getCarModel(): Int {
+        return this.model
+    }
+    fun getCarPrice(): Double {
+        return this.price
+    }
+    fun getCarMilesDrive(): Int {
+        return this.milesDrive
+    }
+    fun getCarOwner(): String {
+        return this.owner
+    }
+    fun setCarOwner(owner: String) {
+        this.owner = owner
+    }
+    fun setCarmodel(model: Int) {
+        this.model = model
+}
+}
+
+fun main(){
+    var car = Car("Honda",2018, 1238892.5, 209,"Oghenovo Egbegbedia")
+    println("${car.type} , ${car.model} , ${car.price} , ${car.milesDrive} , ${car.owner}")
+
+    car.setCarOwner ("Owolabi Emmanuel")
+    car.setCarmodel(2019)
+
+    println("${car.getCarType()}, ${car.getCarModel()}, ${car.getCarPrice()},${car.getCarMilesDrive()} , ${car.getCarOwner()}")
+}
+
+
+2.	class BankAccount{
+    var accountBalance: Double = 0.0
+    var bvn: Int = 0
+    var barcode: Int = 0
+    var chequeNumber: Int = 0
+    var transactionCode: Int = 0
+
+    constructor(accountBalance: Double, bvn: Int, barcode: Int, chequeNumber: Int, transactionCode: Int) {
+        this.accountBalance = accountBalance
+        this.bvn = bvn
+        this.barcode = barcode
+        this.chequeNumber = chequeNumber
+        this.transactionCode = transactionCode
+
+    }
+
+    fun getAccountBalance(): Double {
+        return this.accountBalance
+    }
+
+    fun getChequeNumber(): Int {
+        return this.chequeNumber
+
+    }
+    fun getBvn(): Int {
+        return this.bvn
+
+    }
+
+    fun getTransactionCode(): Int {
+        return this.transactionCode
+
+    }
+
+    fun getBarcode(): Int {
+        return this.barcode
+
+    }
+
+    fun setAccountBalance(accountBalance: Double) {
+        this.accountBalance = accountBalance
+
+    }
+    fun setTransactionCode(transactionCode: Int) {
+        this.transactionCode = transactionCode
+
+    }
+}
+
+fun main() {
+
+    var myAccount: BankAccount = BankAccount(10000000.3, 121322334, 234578, 34568, 456788)
+    println("${myAccount.accountBalance} , ${myAccount.bvn} , ${myAccount.barcode} , ${myAccount.chequeNumber} , ${myAccount.transactionCode}")
+    myAccount.setAccountBalance(432.2)
+    myAccount.setTransactionCode(8788888)
+
+    println("${myAccount.getAccountBalance()}, ${myAccount.getBvn()}, ${myAccount.getBarcode()},${myAccount.getTransactionCode()} , ${myAccount.getChequeNumber()}")
+
+
+}
+
+
+3.	class Engineer {
+    private var fieldOfStudy: String = ""
+    private var firstName: String = ""
+    private var lastName: String = ""
+    private var age: Int = 0
+    private var height: Double = 0.0
+
+    constructor(fieldOfStudy: String, firstName: String, lastName: String, age: Int, height: Double) {
+    this.fieldOfStudy = fieldOfStudy
+        this.firstName = firstName
+        this.lastName = lastName
+        this.age = age
+        this.height = height
+
+    }
+
+    fun getFieldOfStudy(): String {
+        return this.fieldOfStudy
+    }
+
+    fun getFirstName(): String {
+        return this.firstName
+
+    }
+    fun getLastName(): String {
+        return this.lastName
+
+    }
+
+    fun getAge(): Int {
+        return this.age
+
+    }
+
+    fun getHeight(): Double {
+        return this.height
+
+    }
+
+    fun setFieldOfStudy(fieldOfStudy: String) {
+        this.fieldOfStudy = fieldOfStudy
+
+    }
+    fun setAge(age: Int) {
+        this.age = age
+
+    }
+}
+
+
+
+fun main() {
+
+    var engineer: Engineer = Engineer ("Mechanical", "oghenovo", "egbegbedia", 35, 5.78)
+
+    engineer.setFieldOfStudy ("Civil Engineering")
+    engineer.setAge(37)
+
+    println("${engineer.getFieldOfStudy()}, ${engineer.getFirstName()}, ${engineer.getLastName()},${engineer.getAge()} , ${engineer.getHeight()}")
+
+}
+
+
+4.	class AndroidClassA {
+    var facilitator : String = ""
+    var computers : Int = 0
+    var participants : Int = 0
+    var duration: Int = 0
+    var seats : Int = 0
+
+    constructor(facilitator: String, computers: Int, participants: Int, duration: Int, seats: Int) {
+        this.facilitator = facilitator
+        this.computers = computers
+        this.participants = participants
+        this.duration = duration
+        this.seats = seats
+    }
+
+    fun getAndroidClassAFacilitator(): String {
+        return this.facilitator
+    }
+
+    fun getAndroidClassAComputers(): Int {
+        return this.computers
+    }
+    fun getAndroidClassAParticipants(): Int {
+        return this.participants
+    }
+    fun getAndroidClassADuration(): Int {
+        return this.duration
+    }
+    fun getAndroidClassASeats(): Int {
+        return this.seats
+    }
+    fun setAndroidClassAFacilitator(facilitator: String) {
+        this.facilitator = facilitator
+    }
+    fun setAndroidClassASeats(seats: Int) {
+        this.seats= seats
+}
+}
+
+fun main(){
+    var AndroidClass = AndroidClassA("adabe lawrence",45, 90, 16,45)
+    println("${AndroidClass.facilitator} , ${AndroidClass.computers} , ${AndroidClass.participants} , ${AndroidClass.duration} , ${AndroidClass.seats}")
+
+    AndroidClass.setAndroidClassAFacilitator ("Owolabi Emmanuel")
+    AndroidClass.setAndroidClassASeats(105)
+
+    println("${AndroidClass.getAndroidClassAFacilitator()}, ${AndroidClass.getAndroidClassAComputers()}, ${AndroidClass.getAndroidClassAParticipants()},${AndroidClass.getAndroidClassADuration()} , ${AndroidClass.getAndroidClassASeats()}")
+}
+
+
+5.	class Home {
+    var father : String = ""
+    var mother : String = ""
+    var children : Int = 0
+    var rent: Double = 0.0
+    var furniture : Int = 0
+
+    constructor(father: String, mother: String, children: Int, rent :  Double, furniture: Int) {
+        this.father = father
+        this.mother = mother
+        this.children = children
+        this.rent = rent
+        this.furniture = furniture
+    }
+
+    fun getHomeFather(): String {
+        return this.father
+    }
+
+    fun getHomeMother(): String {
+        return this.mother
+    }
+    fun getHomeChildren(): Int {
+        return this.children
+    }
+    fun getHomeRent(): Double {
+        return this.rent
+    }
+    fun getHomeFurniture(): Int {
+        return this.furniture
+    }
+    fun setHomeFather(father: String) {
+        this.father = father
+    }
+    fun setHomeRent(rent: Double) {
+        this.rent= rent
+}
+}
+
+fun main(){
+    var home = Home("Godwin Adamu","Eunice Sabo", 6, 200000.5,45)
+    println("${home.father} , ${home.mother} , ${home.children} , ${home.rent} , ${home.furniture}")
+
+    home.setHomeFather ("Owolabi Emmanuel")
+    home.setHomeRent(3000000.8)
+
+    println("${home.getHomeFather()}, ${home.getHomeMother()}, ${home.getHomeChildren()},${home.getHomeRent()} , ${home.getHomeFurniture()}")
+}
+
+• Create 2 Repositories with 3 files in each of them.
+Push and pull to and from these repositories at least
+twice using the command line or terminal on your
+windows PC or Mac.
+Answer:
+These are the two (2) git repos working from command-line. 
+1.	https://github.com/novosky/classAproject.git
+2.	https://github.com/novosky/my_project.git
