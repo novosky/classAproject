@@ -1,0 +1,321 @@
+MY FISRT ASSESSMENT – MOBILE APP DEVELOPMENT CLASS A - SEAT NO. 16 (0076)
+
+1.	i. Ten (10) advantages of agile software
+a.	Focuses on Users. 
+b.	Focuses on Business Value. 
+c.	Improves Quality. 
+d.	Transparency. 
+e.	Early and Predictable Delivery. 
+f.	Predictable Costs and Schedule. 
+g.	Allows for Change. 
+h.	Stakeholder Engagement. 
+i.	It’s a working Software
+j.	Customer collaboration
+
+ii. 5 known drawbacks
+a.	Limited Documentation.
+b.	Poor Resource Planning. 
+c.	Fragmented Output.  
+d.	Difficult Measurement. 
+e.	No Finite End. 
+
+2.	Create two repositories with command line
+These are two (2) git repos working from command-line. 
+•	.gitone
+•	.gittwo
+You could set them up like so:
+•	git init .
+•	mv .git .gitone
+•	git init .
+•	mv .git .gittwo
+You could add a file and commit it to only one like so:
+•	git --git-dir=.gitone add test.txt
+•	git --git-dir=.gitone commit -m "Test"
+So the options for git come first, then the command, then the git command's options. You could easily enough alias a git command like:
+•	#!/bin/sh
+•	alias gitone='git --git-dir=.gitone'
+•	alias gittwo='git --git-dir=.gittwo'
+You can commit to one or the other with a bit less typing, like gitone commit -m "blah".
+
+3.	Declare 10 variables of each of the main data types in kotlin.
+The built-in types in Kotlin can be categorized as:
+	Numbers
+o	Byte
+var numb6 : Byte = 0
+o	Short
+var numb5 : Short = 0
+o	Int
+var numb : Int = 0
+o	Long
+var numb4 : Long = 123_4567_888L
+o	Float
+var numb3 : Float = 0.0f
+o	Double
+var numb1 : Double = 0.0
+	String
+var name : String = ""
+	Characters
+o	Char
+var a : Char = 'b'
+	Booleans
+var name1 : Boolean = false
+	Array
+
+val intScores : Array<Int> = arrayOf(20, 30,40,50,60)
+
+4.	Define 5 functions which have no return value and 5 which have return value.
+When a function has a body enclosed by curly brackets, it returns a value using the return keyword.
+fun square2(x: Int): Int = x * x
+The return keyword is not used for functions with expression bodies.
+Kotlin function parameters
+Functions in Kotlin may take parameters. The parameters are specified between () brackets and are separated by comma. Function parameters are defined using Pascal notation, i.e. name: type. Each parameter must be explicitly typed.
+params.kt
+package com.zetcode
+fun sum(a: Int, b: Int): Int {
+    return a + b}
+fun main() {
+    val r = sum(4, 3)
+    println(r)}
+In the example, we have a custom sum() function.
+fun sum(a: Int, b: Int): Int {
+    return a + b}
+The sum() function returns the sum of its two parameters. The parameters and the return values are integers.
+val r = sum(4, 3)
+The sum() function is called and the return value is assigned to the r variable.
+Kotlin function default argument values
+Kotlin function arguments may have default values; they are used if no value is provided for the argument.
+default_values.kt
+package com.zetcode
+fun power(a: Int, b: Int = 2): Int {
+    if (b == 2) {
+        return a * a }
+    var value = 1
+    repeat(b) {
+        value *= a}
+    return value;}
+fun main() {
+    val r1 = power(3)
+    println(r1)
+    val r2 = power(3, 3)
+    println(r2)}
+We have created a power function. The function has one argument with an implicit value. We can call the function with one or two arguments.
+9, 27
+This is the output.
+Kotlin void return type
+Kotlin functions must specify their return types; the exception is when they do not return any value. The return type for a void is Unit; this type may be omitted.
+void_ret.kt
+package com.zetcode
+fun showGreeting(name: String): Unit {
+    println("Hello $name")}
+fun main() {
+    showGreeting("Arnold")
+    showGreeting("Lucia")}
+The example shows greetings.
+fun showGreeting(name: String): Unit {
+    println("Hello $name")}
+The showGreeting() function prints a message to the terminal; it does not return anything. Therefore, the return type is specified as Unit.
+Hello Arnold
+Hello Lucia
+This is the output.
+Kotlin single-expression functions
+When the body of a function contains a single expression, the curly braces can be omitted and the body is specified after the = symbol.
+single_expr.kt
+package com.zetcode
+fun double(num: Int): Int = num * 2
+fun triple(num: Int) = num * 3
+fun main() {
+    val r1 = double(3)
+    val r2 = triple(3)
+    println(r1)
+    println(r2)}
+The example contains two single-expression functions.
+fun double(num: Int): Int = num * 2
+The function returns the parameter multiplied by 2. The curly brackets and the return keyword are omitted.
+fun triple(num: Int) = num * 3
+The return type can be omitted; it is inferred by Kotlin.
+Kotlin variable number of arguments
+A function can take variable number of arguments. For this we use the vararg keyword.
+var_args.kt
+package com.zetcode
+fun mysum(vararg vals: Int): Int {
+    return vals.sum()}
+fun main() {
+    val s1 = mysum(1, 2, 3)
+    val s2 = mysum(1, 2, 3, 4)
+    val s3 = mysum(1, 2, 3, 4, 5)
+    println(s1)
+    println(s2)
+    println(s3)}
+We create a mysum() function which can take variable number of arguments. The function calculates the sum of values passed to the function.
+fun mysum(vararg vals: Int): Int {
+    return vals.sum()}
+By using the vararg keyword, the mysum() function can take variable number of parameters. The vals variable is a Kotlin array.
+val s1 = mysum(1, 2, 3)
+val s2 = mysum(1, 2, 3, 4)
+val s3 = mysum(1, 2, 3, 4, 5)
+We call the mysum() function three times. Each time the number of parameters is different.
+6,10,15
+This is the output of the example.
+Kotlin function recursion
+Recursion, in mathematics and computer science, is a way of defining functions in which the function being defined is applied within its own definition. In other words, a recursive function calls itself to do its job. Recursion is a widely used approach to solve many programming tasks.
+A typical example is the calculation of a factorial.
+recursion.kt
+package com.zetcode
+fun fact(num: Int): Int {
+    return if (num == 1) {num
+    } else {
+        num * fact(num - 1)  }}
+fun main() {
+    val f1 = fact(5)
+    val f2 = fact(8)
+    val f3 = fact(12)
+    println(f1)
+    println(f2)
+    println(f3)}
+In this code example, we calculate the factorial of three numbers.
+num * fact(num - 1)
+Inside the body of the fact() function, we invoke the fact() function with a modified argument. The function calls itself.
+120, 40320, 479001600    
+These are the results.
+Kotlin anonymous functions
+Anonymous functions are functions that do not have a name. Anonymous functions reduce the coding overhead by eliminating the need to create a separate funcion.
+anonym.kt
+package com.zetcode
+fun main() {
+    val vals = intArrayOf(-2, -1, 0, 1, 2, 3, 4)
+    val filtered = vals.filter(fun(el) = el > 0)
+    println(filtered)}
+We have an array of integers. The array is filtered with the filter() function. It takes an anonymous function as a parameter.
+val filtered = vals.filter(fun(el) = el > 0)
+The anonymous function is used to filter the array.
+[1, 2, 3, 4]
+We have filtered out negative values.
+Kotlin closures
+Closures are functions that can access and modify properties defined outside the scope of the function.
+closures.kt
+package com.zetcode
+fun makeAverager(): (n: Int) -> Double {
+    val nums = arrayListOf<Int>()
+    return fun(num: Int): Double {
+        nums.add(num)
+        val total = nums.sum()
+        return total.toDouble() / nums.size}}
+fun main() {
+    val avg = makeAverager()
+    println(avg(1))
+    println(avg(2))
+    println(avg(3))
+    println(avg(4))
+    println(avg(5))}
+The example creates a function that calculates the average of the added values. It uses an anonymous function, which calculates the average from the list of values. The anonymous function has access to the nums list, which stores the values and is defined outside of the function body of the anonymous function.
+1.0, 1.5, 2.0, 2.5, 3.0
+This is the output.
+Kotlin local functions
+Local functions are defined inside other functions.
+local_fun.kt
+package com.zetcode
+fun main() {
+    fun buildMessage(name: String?): String {
+        return "Hello $name"  }
+    print("Enter your name: ")
+    val name = readLine()
+    val message = buildMessage(name)
+    println(message)}
+In the example, we have a local function buildMessage(), which is defined and called inside the main() function.
+
+Kotlin extension functions
+An extension function is function that can be added to an existing type without needing to derive a class from it. Extension functions are called like normal member functions. Extension functions allow us to add functionality to classes that were not created by us and when inheritance is not possible or makes no sense.
+extension_fun.kt
+package com.zetcode
+fun String.second(): Char = this[1]
+fun main() {
+    val word = "falcon"
+    println(word.second())}
+The example adds a new function to the String type. The function returns the second char of the string.
+Kotlin member functions
+Member functions are functions defined within a Kotlin class.
+member_fun.kt
+package com.zetcode
+class Cat {
+    fun talk() {
+        println("meow")}}
+fun main() {
+    val missy = Cat()
+    missy.talk()}
+The talk() function is defined in the Cat class.
+val missy = Cat()
+missy.talk()
+We create the Cat object and call the member function using the dot operator.
+Kotlin high-order functions
+A higher-order function is a function that takes functions as parameters, or returns a function.
+highorder_fun.kt
+package com.zetcode
+fun process(data: IntArray, f: (IntArray) -> Any): Any {
+    return f(data)}
+fun main() {
+    val values = intArrayOf(1, 2, 3, 4, 5, 6)
+    val res1 = process(values, IntArray::sum)
+    println(res1)
+    val res2 = process(values, IntArray::average)
+    println(res2)}
+In the example, we have the process() high-order function, which takes two parameters: an integer array and a function. The function is applied on the elements of the array.
+fun process(data: IntArray, f: (IntArray) -> Any): Any {
+    return f(data)}
+The process() high-order function applies the function on the data array.
+val res1 = process(values, IntArray::sum)
+println(res1)
+We pass the IntArray's sum() function to the process() function.
+Kotlin infix functions
+Functions can be called using so called infix notation. Infix notation is a syntactic sugar for visually improving the code. The notation omits the dot and the parentheses. There are several built-in functions that can be called with infix notation, e.g. to(), and(), or matches().
+Infix functions are created with the infix keyword. They must be member functions or extension functions, they must have a single parameter, and the parameter must not accept variable number of arguments and must have no default value.
+infix_builtin.kt
+package com.zetcode
+fun main() {
+    val a = true
+    val b = false
+    var res: Boolean
+    res = a and b // a.and(b)
+    println("a and b = $res")
+    res = a or b // a.or(b)
+    println("a or b = $res")}
+In the example, we use the and() and or() functions in infix notation.
+a or b = true
+a and b = false
+This is the output.
+infix_builtin2.kt
+package com.zetcode
+
+fun main() {
+
+    val regex = Regex("[tT]rue|[yY]es")
+    val values = arrayOf("yes", "no", "YES", "True", "null", "")
+
+    values.forEach { value ->
+        if (value matches regex) println("$value matches")
+        else println("$value does not match")
+    }
+}
+In the example, we use the matches function in infix notation.
+The following example creates a custom infix function.
+infix_fun.kt
+package com.zetcode
+
+class Builder {
+
+    infix fun square(n: Int) {
+
+        for (i in 1.. n) {
+
+            println("0".repeat(n))
+        }
+    }
+}
+
+fun main() {
+
+    val builder = Builder()
+    builder square 4
+    println()
+
+    builder square 6
+}
