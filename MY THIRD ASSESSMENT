@@ -38,8 +38,8 @@ When given the string "Good food", the output should be "doof dooG".
 Answer:
 fun main() {
 
-    val String =""
-    var result: String = "Good Food"
+    val String ="Good Food"
+    var result: String = ""
     var lastIndex = String.lastIndex // last index of the string and store it in variable
 
     while (lastIndex >= 0) {
@@ -47,7 +47,7 @@ fun main() {
         lastIndex--
     }
 
-    println("Reversed: ${result.reversed()}")
+    println("$result")
        }
 
 
